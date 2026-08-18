@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Camila Santos — Portfólio</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 56S7 42.5 7 23.5C7 13.8 14.2 8 22.1 8c5.4 0 9.1 2.9 9.9 6.2C32.8 10.9 36.5 8 41.9 8 49.8 8 57 13.8 57 23.5 57 42.5 32 56 32 56Z' fill='%23FF6F91' stroke='%23D94B75' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M17.5 17.2c3.2-3.7 7.4-3.1 9.4-.9' fill='none' stroke='%23FFD8E5' stroke-width='4' stroke-linecap='round' opacity='.9'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<!-- Playful Cat Heart - https://www.cursors-4u.com/cursor/playful-cat-heart -->
+<link rel="stylesheet" href="https://cdn.cursors-4u.net/cursors/animated/cat-playing-with-heart-080ab87b-128.css">
+<!-- End www.Cursors-4U.com Code -->
+<style>
+  :root{
+    --cream:#FFF8F5;
+    --pink:#FFC2D6;
+    --pink-soft:#FFE1EB;
+    --pink-deep:#FF6F91;
+    --lilac:#D9CBFF;
+    --lilac-soft:#EDE5FF;
+    --mint:#B9F1D8;
+    --mint-soft:#E1FBEE;
+    --ink:#4A3B45;
+    --ink-soft:#8B7686;
+    --white:#FFFFFF;
+    --shadow: 0 12px 30px rgba(255,111,145,0.18);
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family:'Nunito', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3{ font-family:'Fredoka', sans-serif; font-weight:600; }
+
+  .eyebrow{
+    font-family:'Quicksand', sans-serif; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+    font-size:.75rem; color:var(--pink-deep); display:inline-flex; align-items:center; gap:.4em;
+  }
+
+  section{ scroll-margin-top:96px; padding:96px 24px; position:relative; }
+  .wrap{ max-width:1080px; margin:0 auto; }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  button{ font-family:inherit; cursor:pointer; border:none; background:none; }
+  :focus-visible{ outline:3px solid var(--pink-deep); outline-offset:3px; border-radius:8px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+  }
+
+  /* ---------- NAV ---------- */
+  .nav-wrap{ position:fixed; top:18px; left:0; right:0; z-index:100; display:flex; justify-content:center; pointer-events:none; }
+  .nav{
+    pointer-events:auto; display:flex; align-items:center; gap:22px;
+    background:rgba(255,255,255,0.75); backdrop-filter:blur(10px); border:2px solid var(--white);
+    box-shadow:0 8px 24px rgba(255,111,145,0.14); padding:10px 14px 10px 18px; border-radius:100px;
+  }
+  .nav-logo{ display:flex; align-items:center; gap:8px; font-family:'Fredoka'; font-weight:600; font-size:1.05rem; }
+  .nav-logo svg{ width:32px; height:32px; }
+  .nav-links{ display:flex; gap:18px; list-style:none; }
+  .nav-links a{ font-family:'Quicksand'; font-weight:700; font-size:.82rem; color:var(--ink-soft); transition:color .2s ease; }
+  .nav-links a:hover{ color:var(--pink-deep); }
+  .nav-cta{
+    background:var(--pink-deep); color:var(--white); font-family:'Quicksand'; font-weight:700; font-size:.8rem;
+    padding:9px 16px; border-radius:100px; box-shadow:0 6px 16px rgba(255,111,145,0.35);
+    transition:transform .2s ease, box-shadow .2s ease; white-space:nowrap;
+  }
+  .nav-cta:hover{ transform:translateY(-2px) scale(1.03); box-shadow:0 10px 20px rgba(255,111,145,0.45); }
+  .nav-burger{ display:none; width:36px; height:36px; border-radius:50%; background:var(--pink-soft); align-items:center; justify-content:center; }
+  .nav-burger span, .nav-burger span::before, .nav-burger span::after{
+    content:""; display:block; width:16px; height:2px; background:var(--pink-deep); border-radius:2px; position:relative; transition:.25s;
+  }
+  .nav-burger span::before{ position:absolute; top:-5px; }
+  .nav-burger span::after{ position:absolute; top:5px; }
+
+  .mobile-menu{
+    position:fixed; inset:0; z-index:99; background:linear-gradient(160deg, var(--pink-soft), var(--lilac-soft));
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px;
+    transform:translateY(-100%); transition:transform .35s cubic-bezier(.6,0,.3,1);
+  }
+  .mobile-menu.open{ transform:translateY(0); }
+  .mobile-menu a{ font-family:'Fredoka'; font-size:1.4rem; color:var(--ink); }
+  .mobile-close{ position:absolute; top:24px; right:28px; font-size:1.6rem; color:var(--ink); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh; display:flex; align-items:center; padding-top:150px;
+    background: radial-gradient(circle at 15% 20%, var(--pink-soft), transparent 55%),
+                radial-gradient(circle at 85% 15%, var(--lilac-soft), transparent 50%), var(--cream);
+  }
+  .hero .wrap{ display:flex; flex-direction:column; align-items:center; text-align:center; gap:26px; max-width:720px; margin:0 auto; }
+  .hero h1{
+    font-size:clamp(2.3rem,5vw,3.5rem);
+    line-height:1.12;
+    width:min(100%, 620px);
+    margin:14px auto 18px;
+    text-align:left;
+  }
+  .hero h1 .accent{ color:var(--pink-deep); }
+  .hero p.sub{
+    font-size:1.05rem;
+    color:var(--ink-soft);
+    width:min(100%, 620px);
+    max-width:620px;
+    margin:0 auto 26px;
+    text-align:left;
+  }
+  .hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-bottom:22px; }
+  .btn-primary, .btn-secondary{
+    font-family:'Quicksand'; font-weight:700; font-size:.95rem; padding:14px 26px; border-radius:100px;
+    transition:transform .2s ease, box-shadow .2s ease; display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn-primary{ background:var(--pink-deep); color:var(--white); box-shadow:0 10px 22px rgba(255,111,145,0.4); }
+  .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 14px 26px rgba(255,111,145,0.5); }
+  .btn-secondary{ background:var(--white); color:var(--ink); border:2px solid var(--pink-soft); }
+  .btn-secondary:hover{ border-color:var(--pink-deep); transform:translateY(-3px); }
+
+  .quick-links{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+  .quick-link{
+    font-family:'Quicksand'; font-weight:700; font-size:.78rem; padding:8px 14px; border-radius:100px;
+    background:var(--white); border:2px solid var(--pink-soft); display:inline-flex; align-items:center; gap:6px;
+    transition:.2s ease;
+  }
+  .quick-link:hover{ border-color:var(--pink-deep); color:var(--pink-deep); transform:translateY(-2px); }
+
+
+  .scroll-cue{
+    position:absolute; bottom:22px; left:50%; transform:translateX(-50%);
+    font-family:'Quicksand'; font-weight:600; font-size:.72rem; color:var(--ink-soft);
+    display:flex; flex-direction:column; align-items:center; gap:6px;
+  }
+  .scroll-cue span{ width:2px; height:24px; background:var(--pink-deep); border-radius:2px; animation:pulse-down 1.8s ease-in-out infinite; }
+  @keyframes pulse-down{ 0%{ opacity:0; transform:scaleY(.3); transform-origin:top;} 40%{opacity:1; transform:scaleY(1); transform-origin:top;} 100%{opacity:0; transform:scaleY(.3); transform-origin:bottom;} }
+
+  .scallop{ position:relative; height:36px; background:var(--white); }
+  .scallop::before{
+    content:""; position:absolute; top:-18px; left:0; right:0; height:36px;
+    background-image: radial-gradient(circle at 18px 18px, var(--cream) 17px, transparent 18px);
+    background-size:36px 36px; background-repeat:repeat-x;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{ background:var(--white); }
+  .about .wrap{ display:grid; grid-template-columns:.85fr 1.15fr; gap:56px; align-items:center; }
+  .about-frame{
+    position:relative;
+    width:100%;
+    max-width:360px;
+    margin:0 auto;
+    background:var(--pink-soft);
+    border-radius:40% 60% 55% 45% / 55% 45% 55% 45%;
+    padding:10px;
+    box-shadow:var(--shadow);
+  }
+  .about-frame .photo-placeholder{
+    width:100%;
+    aspect-ratio:1 / 1;
+    border-radius:40% 60% 55% 45% / 55% 45% 55% 45%;
+    overflow:hidden;
+    padding:0;
+    background:var(--pink-soft);
+    display:block;
+  }
+  .about-photo{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 35%;
+    border-radius:inherit;
+  }
+  .sticky-note{
+    position:absolute; background:var(--white); font-family:'Quicksand'; font-weight:700; font-size:.76rem;
+    padding:8px 14px; border-radius:12px; box-shadow:0 8px 16px rgba(74,59,69,.12); transform:rotate(-6deg);
+  }
+  .sticky-note.n1{ top:-14px; right:-18px; background:var(--mint-soft); transform:rotate(8deg); }
+  .sticky-note.n2{ bottom:-14px; left:-22px; background:var(--lilac-soft); transform:rotate(-7deg); }
+
+  .about h2{ font-size:clamp(1.6rem,3vw,2.2rem); margin-bottom:16px; }
+  .about p{ color:var(--ink-soft); margin-bottom:18px; max-width:540px; }
+  .pill-row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; }
+  .pill{ font-family:'Quicksand'; font-weight:700; font-size:.8rem; padding:8px 16px; border-radius:100px; background:var(--pink-soft); color:var(--ink); }
+  .pill.alt1{ background:var(--lilac-soft); }
+  .pill.alt2{ background:var(--mint-soft); }
+
+  /* ---------- SECTION HEAD ---------- */
+  .section-head{ text-align:center; max-width:620px; margin:0 auto 50px; }
+  .section-head h2{ font-size:clamp(1.7rem,3.2vw,2.3rem); margin-top:8px; }
+  .section-head p{ color:var(--ink-soft); margin-top:12px; }
+
+  /* ---------- TIMELINE (experiência) ---------- */
+  .experiencia{ background:linear-gradient(180deg, var(--white), var(--lilac-soft)); }
+  .timeline{ display:flex; flex-direction:column; gap:24px; }
+  .timeline-card{
+    background:var(--white); border-radius:22px; padding:26px 28px; box-shadow:0 12px 24px rgba(74,59,69,.08);
+    border-left:6px solid var(--pink-deep);
+  }
+  .timeline-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap; margin-bottom:10px; }
+  .timeline-role{ font-family:'Fredoka'; font-size:1.15rem; }
+  .timeline-company{ color:var(--pink-deep); font-family:'Quicksand'; font-weight:700; font-size:.9rem; }
+  .timeline-date{
+    font-family:'Quicksand'; font-weight:700; font-size:.75rem; background:var(--pink-soft); color:var(--ink);
+    padding:5px 14px; border-radius:100px; white-space:nowrap;
+  }
+  .timeline-card ul{ list-style:none; color:var(--ink-soft); font-size:.92rem; }
+  .timeline-card li{ position:relative; padding-left:26px; margin-bottom:6px; }
+  .timeline-card li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:.28em;
+    width:14px;
+    height:14px;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23FF9AB5'/%3E%3Cstop offset='100%25' stop-color='%23FF6F91'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M32 56C31 56 30 55.6 29.2 54.8L12.6 38.9C6.8 33.4 6 24.3 10.8 18.3C15.2 12.8 23.2 11.8 28.8 15.8L32 18.1L35.2 15.8C40.8 11.8 48.8 12.8 53.2 18.3C58 24.3 57.2 33.4 51.4 38.9L34.8 54.8C34 55.6 33 56 32 56Z' fill='url(%23g)' stroke='%23FFFFFF' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+  }
+
+  /* ---------- EDUCATION ---------- */
+  .formacao{ background:var(--white); }
+  .edu-list{ display:flex; flex-direction:column; gap:16px; max-width:760px; margin:0 auto; }
+  .edu-item{
+    display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;
+    background:var(--cream); border-radius:18px; padding:18px 24px; border:2px solid var(--pink-soft);
+  }
+  .edu-item .edu-course{ font-family:'Fredoka'; font-size:1.05rem; }
+  .edu-item .edu-school{ font-family:'Quicksand'; font-weight:700; color:var(--pink-deep); font-size:.85rem; }
+  .edu-item .edu-date{ font-family:'Quicksand'; font-weight:700; font-size:.78rem; color:var(--ink-soft); white-space:nowrap; }
+
+  /* ---------- SKILLS + EXTRA ---------- */
+  .skills{ background:var(--pink-soft); }
+  .skill-groups{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-bottom:24px; }
+  .extra-groups{ display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+  .skill-card{ background:var(--white); border-radius:22px; padding:26px; box-shadow:0 12px 22px rgba(74,59,69,.08); }
+  .skill-card h3{ font-size:1rem; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+  .skill-card .pill-row{ gap:8px; margin-top:0; }
+  .skill-card .pill{ font-size:.76rem; padding:7px 13px; }
+  .lang-item, .vol-item{ display:flex; justify-content:space-between; font-size:.88rem; padding:8px 0; border-bottom:1px dashed var(--pink-soft); }
+  .lang-item:last-child, .vol-item:last-child{ border-bottom:none; }
+  .lang-item span:last-child{ font-family:'Quicksand'; font-weight:700; color:var(--pink-deep); }
+  .vol-item{ flex-direction:column; gap:2px; }
+  .vol-role{ font-weight:700; }
+  .vol-org{ color:var(--ink-soft); font-size:.82rem; }
+
+  /* ---------- PROJECTS ---------- */
+  .projects{ background: linear-gradient(180deg, var(--white), var(--mint-soft) 300px, var(--mint-soft)); }
+  .project-sub{ font-family:'Fredoka'; font-size:1.2rem; margin:38px 0 20px; text-align:center; }
+  .project-sub:first-of-type{ margin-top:0; }
+  .project-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:26px; }
+  .project-card{
+    background:var(--white); border-radius:20px; padding:14px 14px 20px; box-shadow:0 14px 26px rgba(74,59,69,.10);
+    position:relative; transition:transform .3s ease, box-shadow .3s ease;
+    display:flex; flex-direction:column; height:100%;
+  }
+  .project-card:hover{ transform:translateY(-8px) rotate(-1deg); box-shadow:0 20px 34px rgba(255,111,145,.25); }
+  .washi{ position:absolute; top:-10px; left:26px; width:60px; height:20px; border-radius:3px; opacity:.85; transform:rotate(-8deg); }
+  .project-thumb{ border-radius:14px; width:100%; height:220px; object-fit:cover; display:block; margin-bottom:16px; background:var(--pink-soft); flex:0 0 auto; }
+  .project-card h4{
+    font-family:'Fredoka'; font-size:1.05rem; margin-bottom:4px; line-height:1.25;
+    min-height:2.5em; display:flex; align-items:flex-start;
+  }
+  .project-card p{
+    font-size:.84rem; color:var(--ink-soft); margin:0 0 10px; line-height:1.7;
+    text-align:left; hyphens:auto;
+  }
+  .project-card p:last-of-type{ margin-bottom:14px; }
+  .project-tag{
+    font-family:'Quicksand'; font-weight:700; font-size:.68rem; color:var(--pink-deep); text-transform:uppercase;
+    letter-spacing:.06em; margin-bottom:8px; display:block; min-height:1.2em;
+  }
+  .project-link{
+    font-family:'Quicksand'; font-weight:700; font-size:.82rem; color:var(--ink); display:inline-flex; gap:6px;
+    align-items:center; transition:gap .2s ease, color .2s ease; margin-top:auto; align-self:flex-start;
+  }
+  .project-link:hover{ color:var(--pink-deep); gap:10px; }
+
+  /* ---------- GALERIA / LIGHTBOX ---------- */
+  .project-thumb{
+    cursor:zoom-in;
+    transition:transform .25s ease, box-shadow .25s ease, opacity .25s ease;
+  }
+  .project-thumb:hover{
+    transform:scale(1.015);
+    box-shadow:0 10px 22px rgba(74,59,69,.14);
+  }
+  .project-thumb:focus-visible{
+    outline:3px solid var(--pink-deep);
+    outline-offset:4px;
+  }
+  body.gallery-open{ overflow:hidden; }
+  .lightbox{
+    position:fixed;
+    inset:0;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:28px 76px 56px;
+    background:rgba(44,32,40,.88);
+    backdrop-filter:blur(8px);
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .25s ease, visibility .25s ease;
+  }
+  .lightbox.open{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+  }
+  .lightbox-dialog{
+    position:relative;
+    width:min(1100px, 100%);
+    height:min(82vh, 820px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .lightbox-image{
+    max-width:100%;
+    max-height:100%;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+    border-radius:18px;
+    background:var(--white);
+    box-shadow:0 24px 70px rgba(0,0,0,.38);
+  }
+  .lightbox-caption{
+    position:absolute;
+    left:50%;
+    bottom:-42px;
+    transform:translateX(-50%);
+    width:min(760px, 90vw);
+    color:var(--white);
+    text-align:center;
+    font-family:'Quicksand', sans-serif;
+    font-weight:700;
+    font-size:.9rem;
+  }
+  .lightbox-close,
+  .lightbox-prev,
+  .lightbox-next{
+    position:absolute;
+    z-index:2;
+    display:grid;
+    place-items:center;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:rgba(255,255,255,.94);
+    color:var(--ink);
+    box-shadow:0 8px 24px rgba(0,0,0,.22);
+    font-size:1.55rem;
+    line-height:1;
+    transition:transform .2s ease, background .2s ease;
+  }
+  .lightbox-close:hover,
+  .lightbox-prev:hover,
+  .lightbox-next:hover{
+    background:var(--pink-soft);
+    transform:scale(1.08);
+  }
+  .lightbox-close{ top:20px; right:20px; }
+  .lightbox-prev{ left:18px; top:50%; transform:translateY(-50%); }
+  .lightbox-next{ right:18px; top:50%; transform:translateY(-50%); }
+  .lightbox-prev:hover,
+  .lightbox-next:hover{ transform:translateY(-50%) scale(1.08); }
+
+  footer{ background:var(--lilac-soft); padding:36px 24px; text-align:center; }
+  footer p{ font-family:'Quicksand'; font-weight:700; font-size:.82rem; color:var(--ink-soft); }
+
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+  @media (max-width:900px){
+    .hero{ min-height:auto; padding-top:130px; padding-bottom:80px; }
+    .hero p.sub, .quick-links, .hero-ctas{ margin-inline:auto; justify-content:center; }
+    .about .wrap{ grid-template-columns:1fr; text-align:center; }
+    .about-frame{ max-width:300px; margin:0 auto; }
+    .pill-row{ justify-content:center; }
+    .project-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .project-thumb{ height:190px; }
+    .skill-groups, .extra-groups{ grid-template-columns:1fr; }
+    .timeline-head{ flex-direction:column; align-items:flex-start; }
+    .lightbox{ padding:24px 66px 58px; }
+  }
+  @media (max-width:720px){
+    .nav-wrap{ top:10px; padding:0 12px; }
+    .nav{ width:min(100%, 560px); justify-content:space-between; gap:10px; padding:9px 10px 9px 14px; }
+    .nav-links, .nav-cta{ display:none; }
+    .nav-burger{ display:flex; flex:0 0 auto; }
+    .nav-logo{ min-width:0; }
+    section{ padding:64px 18px; }
+    .hero{ padding-top:110px; }
+    .hero h1{ font-size:clamp(2rem,10vw,3rem); }
+    .hero p.sub{ font-size:.98rem; }
+    .hero-ctas{ width:100%; }
+    .btn-primary, .btn-secondary{ justify-content:center; }
+    .quick-links{ gap:8px; }
+    .about .wrap{ gap:34px; }
+    .timeline-card, .skill-card{ padding:22px 20px; }
+    .project-card{ min-width:0; }
+    .project-card p{ overflow-wrap:anywhere; }
+    .lightbox{ padding:68px 16px 78px; }
+    .lightbox-dialog{ width:100%; height:72vh; }
+    .lightbox-close{ top:12px; right:12px; }
+    .lightbox-prev{ left:10px; }
+    .lightbox-next{ right:10px; }
+    .lightbox-prev, .lightbox-next{ width:44px; height:44px; background:rgba(255,255,255,.9); }
+  }
+  @media (max-width:560px){
+    .about-frame{ max-width:280px; padding:8px; }
+    .sticky-note{ font-size:.68rem; padding:7px 10px; }
+    .sticky-note.n1{ right:-8px; }
+    .sticky-note.n2{ left:-8px; }
+    .project-grid{ grid-template-columns:1fr; gap:20px; }
+    .project-thumb{ height:auto; aspect-ratio:16/10; }
+    .edu-item{ flex-direction:column; align-items:flex-start; }
+    .hero-ctas{ flex-direction:column; align-items:stretch; }
+    .btn-primary, .btn-secondary{ width:100%; }
+    .quick-link{ font-size:.74rem; }
+    .section-head{ margin-bottom:38px; }
+    .project-sub{ margin-top:30px; }
+    .lightbox-image{ border-radius:12px; }
+    .lightbox-caption{ bottom:-50px; font-size:.82rem; }
+  }
+  @media (max-width:380px){
+    section{ padding-left:14px; padding-right:14px; }
+    .nav-logo{ font-size:.95rem; }
+    .hero h1{ font-size:2rem; }
+    .quick-links{ justify-content:center; }
+    .quick-link{ padding:7px 10px; }
+    .timeline-card, .skill-card, .project-card{ padding-left:16px; padding-right:16px; }
+  }
+
+
+  /* ==========================================================
+     BARRA DE ROLAGEM — TEMA FOFO DO PORTFÓLIO
+     ========================================================== */
+
+  /* Firefox */
+  html{
+    scrollbar-width:thin;
+    scrollbar-color:var(--pink-deep) var(--cream);
+    scrollbar-gutter:stable;
+  }
+
+  /* Chrome / Edge / Safari */
+  ::-webkit-scrollbar{
+    width:14px;
+    height:14px;
+  }
+
+  ::-webkit-scrollbar-track{
+    background:linear-gradient(180deg, var(--cream), var(--pink-soft), var(--lilac-soft));
+    border-left:1px solid rgba(255,111,145,.12);
+  }
+
+  ::-webkit-scrollbar-thumb{
+    background:linear-gradient(180deg, var(--pink), var(--pink-deep));
+    border:3px solid var(--cream);
+    border-radius:999px;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.45), 0 2px 8px rgba(255,111,145,.22);
+  }
+
+  ::-webkit-scrollbar-thumb:hover{
+    background:linear-gradient(180deg, var(--lilac), var(--pink-deep));
+  }
+
+  ::-webkit-scrollbar-thumb:active{
+    background:var(--pink-deep);
+  }
+
+  ::-webkit-scrollbar-corner{
+    background:var(--cream);
+  }
+
+
+
+  /* ==========================================================
+     RESPONSIVIDADE FINAL — DESKTOP / TABLET / CELULAR
+     ========================================================== */
+
+  /* Base fluida e proteção contra estouro horizontal */
+  html{
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+  }
+
+  body{
+    width:100%;
+    min-width:0;
+  }
+
+  .wrap{
+    width:min(1080px, calc(100% - 48px));
+  }
+
+  img, svg, video, iframe{
+    max-width:100%;
+  }
+
+  .hero .wrap,
+  .about .wrap,
+  .project-grid,
+  .skill-groups,
+  .extra-groups{
+    min-width:0;
+  }
+
+  .hero .wrap > *,
+  .about .wrap > *,
+  .project-card,
+  .timeline-card,
+  .skill-card{
+    min-width:0;
+  }
+
+  p, li, h1, h2, h3, h4, a, span{
+    overflow-wrap:break-word;
+  }
+
+  /* Notebook / tablet horizontal */
+  @media (max-width:1024px){
+    section{
+      padding:84px 24px;
+    }
+
+    .wrap{
+      width:min(920px, calc(100% - 40px));
+    }
+
+    .nav{
+      max-width:calc(100vw - 32px);
+      gap:16px;
+    }
+
+    .nav-links{
+      gap:13px;
+    }
+
+    .about .wrap{
+      gap:40px;
+    }
+
+    .project-grid{
+      gap:20px;
+    }
+  }
+
+  /* Tablet */
+  @media (max-width:900px){
+    .wrap{
+      width:min(720px, calc(100% - 36px));
+    }
+
+    .hero{
+      min-height:auto;
+      padding:130px 20px 74px;
+    }
+
+    .hero p.sub{
+      max-width:620px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .about .wrap{
+      grid-template-columns:1fr;
+      gap:46px;
+      text-align:center;
+    }
+
+    .about-frame{
+      max-width:330px;
+    }
+
+    .about p{
+      max-width:650px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+
+    .pill-row,
+
+    .project-grid{
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+    }
+
+    .project-thumb{
+      height:auto;
+      aspect-ratio:16 / 10;
+    }
+
+    .skill-groups,
+    .extra-groups{
+      grid-template-columns:1fr;
+    }
+  }
+
+  /* Celular / tablet vertical */
+  @media (max-width:720px){
+    .wrap{
+      width:100%;
+      max-width:none;
+    }
+
+    section{
+      padding:64px 18px;
+    }
+
+    .nav-wrap{
+      top:10px;
+      padding:0 12px;
+    }
+
+    .nav{
+      width:100%;
+      max-width:560px;
+      min-width:0;
+      justify-content:space-between;
+      padding:9px 10px 9px 13px;
+      gap:8px;
+    }
+
+    .nav-links,
+    .nav > .nav-cta{
+      display:none;
+    }
+
+    .nav-burger{
+      display:flex;
+      flex:0 0 36px;
+    }
+
+    .nav-logo{
+      min-width:0;
+      font-size:1rem;
+    }
+
+    .nav-logo svg{
+      width:30px;
+      height:30px;
+      flex:0 0 auto;
+    }
+
+    .mobile-menu{
+      padding:88px 24px 44px;
+      overflow-y:auto;
+    }
+
+    .mobile-menu a{
+      font-size:clamp(1.25rem, 6vw, 1.55rem);
+      text-align:center;
+    }
+
+    .hero{
+      padding:110px 18px 64px;
+    }
+
+    .hero .wrap{
+      gap:28px;
+    }
+
+    .hero h1{
+      font-size:clamp(2.15rem, 10vw, 3rem);
+      line-height:1.08;
+    }
+
+    .hero p.sub{
+      font-size:.98rem;
+    }
+
+
+
+
+    .scroll-cue{
+      display:none;
+    }
+
+    .about .wrap{
+      gap:34px;
+    }
+
+    .about-frame{
+      width:min(290px, 78vw);
+      padding:8px;
+    }
+
+    .sticky-note{
+      font-size:.68rem;
+      padding:7px 10px;
+      white-space:nowrap;
+    }
+
+    .sticky-note.n1{
+      top:-10px;
+      right:-6px;
+    }
+
+    .sticky-note.n2{
+      bottom:-10px;
+      left:-6px;
+    }
+
+    .section-head{
+      margin-bottom:38px;
+    }
+
+    .timeline-card,
+    .skill-card{
+      padding:20px 18px;
+      border-radius:18px;
+    }
+
+    .timeline-head{
+      flex-direction:column;
+      align-items:flex-start;
+    }
+
+    .timeline-date{
+      white-space:normal;
+    }
+
+    .edu-item{
+      align-items:flex-start;
+    }
+
+    .project-card{
+      padding:13px 13px 18px;
+    }
+
+    .project-card h4{
+      min-height:0;
+    }
+
+    .project-card:hover{
+      transform:translateY(-4px);
+    }
+
+    .lightbox{
+      padding:68px 14px 76px;
+    }
+
+    .lightbox-dialog{
+      width:100%;
+      height:min(70vh, 620px);
+    }
+
+    .lightbox-close{
+      top:12px;
+      right:12px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next{
+      width:44px;
+      height:44px;
+      top:auto;
+      bottom:14px;
+      transform:none;
+      background:rgba(255,255,255,.94);
+    }
+
+    .lightbox-prev{
+      left:calc(50% - 58px);
+    }
+
+    .lightbox-next{
+      right:calc(50% - 58px);
+    }
+
+    .lightbox-prev:hover,
+    .lightbox-next:hover{
+      transform:scale(1.06);
+    }
+
+    .lightbox-caption{
+      bottom:-44px;
+      width:calc(100vw - 40px);
+      font-size:.8rem;
+    }
+  }
+
+  /* Celular */
+  @media (max-width:560px){
+    section{
+      padding:56px 16px;
+    }
+
+    .hero{
+      padding:102px 16px 56px;
+    }
+
+    .hero-ctas{
+      width:100%;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .btn-primary,
+    .btn-secondary{
+      width:100%;
+      justify-content:center;
+      padding:13px 18px;
+    }
+
+    .quick-links{
+      gap:8px;
+    }
+
+    .quick-link{
+      flex:1 1 calc(50% - 8px);
+      justify-content:center;
+      min-width:125px;
+    }
+
+
+    .about-frame{
+      width:min(270px, 78vw);
+    }
+
+    .pill-row{
+      gap:8px;
+    }
+
+    .pill{
+      font-size:.75rem;
+      padding:7px 12px;
+    }
+
+    .project-grid{
+      grid-template-columns:1fr;
+      gap:22px;
+    }
+
+    .project-thumb{
+      aspect-ratio:16 / 10;
+    }
+
+    .project-sub{
+      margin:32px 0 18px;
+      font-size:1.1rem;
+    }
+
+    .edu-item{
+      flex-direction:column;
+      align-items:flex-start;
+      padding:16px 18px;
+    }
+
+    .lang-item{
+      gap:12px;
+      align-items:flex-start;
+    }
+  }
+
+  /* Celulares pequenos */
+  @media (max-width:390px){
+    section{
+      padding-left:14px;
+      padding-right:14px;
+    }
+
+    .nav-wrap{
+      padding:0 8px;
+    }
+
+    .nav{
+      padding-left:10px;
+    }
+
+    .nav-logo{
+      font-size:.92rem;
+    }
+
+    .nav-logo svg{
+      width:28px;
+      height:28px;
+    }
+
+    .hero{
+      padding-left:14px;
+      padding-right:14px;
+    }
+
+    .hero h1{
+      font-size:2rem;
+    }
+
+    .quick-link{
+      flex-basis:100%;
+      min-width:0;
+    }
+
+    .about-frame{
+      width:min(245px, 76vw);
+    }
+
+    .sticky-note{
+      font-size:.62rem;
+      padding:6px 8px;
+    }
+
+    .timeline-card,
+    .skill-card,
+    .project-card{
+      padding-left:15px;
+      padding-right:15px;
+    }
+  }
+
+  /* Em telas touch, remove efeitos que dependem de hover e cursor customizado */
+  @media (hover:none), (pointer:coarse){
+    html, body,
+    a, button, .project-thumb, .nav-logo, .nav-links a, .nav-cta,
+    .quick-link, .btn-primary, .btn-secondary, .project-link,
+    .lightbox-close, .lightbox-prev, .lightbox-next{
+      cursor:auto;
+    }
+
+    .project-card:hover,
+    .project-thumb:hover,
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .quick-link:hover{
+      transform:none;
+    }
+  }
+
+
+
+  /* ==========================================================
+     PADRONIZAÇÃO DOS CARDS DE PROJETOS — MODELO COMPACTO
+     ========================================================== */
+  .project-grid{
+    align-items:stretch;
+  }
+
+  .project-card{
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    padding:14px 14px 20px;
+    border-radius:20px;
+    overflow:hidden;
+  }
+
+  .project-thumb{
+    width:100%;
+    height:220px;
+    aspect-ratio:auto;
+    object-fit:cover;
+    border-radius:14px;
+    margin-bottom:18px;
+    flex:0 0 auto;
+  }
+
+  .project-tag{
+    min-height:0;
+    margin:0 0 8px;
+    line-height:1.35;
+  }
+
+  .project-card h4{
+    min-height:0;
+    display:block;
+    margin:0 0 7px;
+    line-height:1.28;
+  }
+
+  /* Mantém os boxes compactos mesmo quando a descrição original é extensa. */
+  .project-card p{
+    margin:0;
+    line-height:1.72;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:5;
+    line-clamp:5;
+    overflow:hidden;
+  }
+
+  /* Nos projetos que possuem vários parágrafos, o card mostra apenas o
+     primeiro resumo para manter o mesmo padrão visual dos demais boxes. */
+  .project-card p ~ p{
+    display:none;
+  }
+
+  .project-link{
+    margin-top:14px;
+    align-self:flex-start;
+  }
+
+  @media (max-width:900px){
+    .project-thumb{
+      height:210px;
+      aspect-ratio:auto;
+    }
+  }
+
+  @media (max-width:560px){
+    .project-card{
+      max-width:420px;
+      width:100%;
+      margin-inline:auto;
+    }
+
+    .project-thumb{
+      height:auto;
+      aspect-ratio:1.18 / 1;
+    }
+  }
+
+
+
+  /* ==========================================================
+     CARDS DE PROJETOS — TEXTO COMPLETO SEM CORTES
+     ========================================================== */
+  .project-grid{
+    align-items:stretch;
+  }
+
+  .project-card{
+    height:100%;
+    overflow:visible;
+  }
+
+  .project-card p{
+    display:block;
+    -webkit-line-clamp:unset;
+    line-clamp:unset;
+    -webkit-box-orient:initial;
+    overflow:visible;
+    max-height:none;
+    margin:0 0 10px;
+  }
+
+  .project-card p ~ p{
+    display:block;
+    margin-top:2px;
+  }
+
+  .project-card p:last-of-type{
+    margin-bottom:14px;
+  }
+
+  .project-link{
+    margin-top:auto;
+  }
+
+
+  /* ---------- GALERIA ÚNICA — ILUSTRAÇÃO & ARTE DIGITAL ---------- */
+  .art-gallery-single{
+    width:min(760px, 100%);
+    margin:0 auto;
+  }
+
+  .art-gallery-card{
+    position:relative;
+    display:block;
+    width:100%;
+    padding:14px;
+    overflow:hidden;
+    border-radius:24px;
+    background:var(--white);
+    box-shadow:0 14px 28px rgba(74,59,69,.12);
+    cursor:zoom-in;
+    text-align:left;
+    transition:transform .28s ease, box-shadow .28s ease;
+  }
+
+  .art-gallery-card::before{
+    content:"";
+    position:absolute;
+    z-index:2;
+    top:4px;
+    left:42px;
+    width:68px;
+    height:20px;
+    border-radius:3px;
+    background:var(--pink);
+    opacity:.88;
+    transform:rotate(-6deg);
+  }
+
+  .art-gallery-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 34px rgba(255,111,145,.23);
+  }
+
+  .art-gallery-cover{
+    display:block;
+    width:100%;
+    height:390px;
+    object-fit:cover;
+    object-position:center;
+    border-radius:14px;
+    background:linear-gradient(135deg, var(--pink-soft), var(--lilac-soft), var(--mint-soft));
+  }
+
+  .art-gallery-overlay{
+    position:absolute;
+    left:14px;
+    right:14px;
+    bottom:14px;
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+    padding:54px 22px 20px;
+    border-radius:0 0 14px 14px;
+    color:#fff;
+    background:linear-gradient(180deg, transparent, rgba(52,34,45,.88));
+  }
+
+  .art-gallery-kicker{
+    font-family:'Quicksand', sans-serif;
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:#FFD8E5;
+  }
+
+  .art-gallery-overlay strong{
+    font-family:'Fredoka', sans-serif;
+    font-size:1.35rem;
+    font-weight:600;
+  }
+
+  .art-gallery-hint{
+    font-family:'Quicksand', sans-serif;
+    font-size:.82rem;
+    font-weight:600;
+    opacity:.92;
+  }
+
+  @media (max-width:720px){
+    .art-gallery-card{ padding:11px; border-radius:20px; }
+    .art-gallery-cover{ height:300px; border-radius:12px; }
+    .art-gallery-overlay{ left:11px; right:11px; bottom:11px; padding:48px 16px 16px; border-radius:0 0 12px 12px; }
+    .art-gallery-overlay strong{ font-size:1.15rem; }
+  }
+
+  @media (max-width:480px){
+    .art-gallery-cover{ height:235px; }
+    .art-gallery-overlay{ padding-top:40px; }
+    .art-gallery-hint{ font-size:.76rem; }
+  }
+
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="mascot" viewBox="0 0 64 64">
+    <defs>
+      <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FF9AB5"/>
+        <stop offset="100%" stop-color="#FF6F91"/>
+      </linearGradient>
+    </defs>
+    <path d="M32 56C31 56 30 55.6 29.2 54.8L12.6 38.9C6.8 33.4 6 24.3 10.8 18.3C15.2 12.8 23.2 11.8 28.8 15.8L32 18.1L35.2 15.8C40.8 11.8 48.8 12.8 53.2 18.3C58 24.3 57.2 33.4 51.4 38.9L34.8 54.8C34 55.6 33 56 32 56Z" fill="url(#heartGrad)" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round"/>
+    <path d="M21.5 16.5C19 17 16.7 18.5 15.1 20.8" fill="none" stroke="#FFD7E4" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M47.5 17.2C49.6 18.3 51.3 20 52.4 22.1" fill="none" stroke="#FFC2D6" stroke-width="2.2" stroke-linecap="round" opacity="0.9"/>
+    <circle cx="45.5" cy="14.5" r="2.2" fill="#FFD7E4"/>
+  </symbol>
+</svg>
+
+<!-- ================= NAV ================= -->
+<div class="nav-wrap">
+  <nav class="nav">
+    <a href="#top" class="nav-logo"><svg><use href="#mascot"/></svg> Camila</a>
+    <ul class="nav-links">
+      <li><a href="#experiencia">Experiência</a></li>
+      <li><a href="#formacao">Formação</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+    </ul>
+    <button class="nav-burger" id="burgerBtn" aria-label="Abrir menu"><span></span></button>
+  </nav>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="closeMenuBtn" aria-label="Fechar menu">✕</button>
+  <a href="#experiencia">Experiência</a>
+  <a href="#formacao">Formação</a>
+  <a href="#projetos">Projetos</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1>Oi, eu sou a <span class="accent">Camila</span>! </h1>
+    <p class="sub">Sou estudante de Sistemas de Informação no Instituto Federal de Educação, Ciência e Tecnologia de São Paulo (IFSP) e formada em Design Gráfico e Digital. Busco unir tecnologia, criatividade e experiência do usuário para desenvolver soluções funcionais, intuitivas e visualmente consistentes. Este portfólio está em constante atualização, acompanhando os novos projetos e trabalhos que finalizo ao longo da minha trajetória.</p>
+    <div class="hero-ctas">
+      <a href="#projetos" class="btn-primary">Ver projetos</a>
+    </div>
+    <div class="quick-links">
+      <a href="https://github.com/langdonzx" target="_blank" class="quick-link">💻 GitHub</a>
+      <a href="https://www.linkedin.com/in/camila-ferreira-santos" target="_blank" class="quick-link">💼 LinkedIn</a>
+      <a href="https://wa.me/5511962991266" target="_blank" class="quick-link">💬 WhatsApp</a>
+      <a href="mailto:camilacfs@outlook.com.br" class="quick-link">✉️ E-mail</a>
+    </div>
+  </div>
+</header>
+<div class="scallop" aria-hidden="true"></div>
+
+<!-- ================= EXPERIÊNCIA ================= -->
+<section class="experiencia" id="experiencia">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"></span>
+      <h2>Por onde já passei</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-card reveal">
+        <div class="timeline-head">
+          <div>
+            <div class="timeline-role">Estagiária de Automação Industrial</div>
+            <div class="timeline-company">Siemens</div>
+          </div>
+          <span class="timeline-date">2024 – 2026</span>
+        </div>
+        <ul>
+          <li>Desenvolvimento de softwares industriais com PCS 7 e TIA Portal</li>
+          <li>Design de telas de supervisórios e IHM com foco em usabilidade (UX/UI)</li>
+          <li>Modelagem de processos, testes funcionais e documentação técnica</li>
+          <li>Integração de sistemas e validação de soluções em ambiente SIMIT</li>
+        </ul>
+      </div>
+
+      <div class="timeline-card reveal">
+        <div class="timeline-head">
+          <div>
+            <div class="timeline-role">Estagiária de Desenvolvimento de Produto</div>
+            <div class="timeline-company">Ford Motor Company</div>
+          </div>
+          <span class="timeline-date">2023 – 2024</span>
+        </div>
+        <ul>
+          <li>Levantamento de requisitos e análise de regras de negócio</li>
+          <li>Apoio na evolução de aplicações internas e manutenção corretiva</li>
+          <li>Elaboração de documentação técnica e relatórios de status</li>
+          <li>Suporte a equipes na execução de testes e homologações</li>
+        </ul>
+      </div>
+
+      <div class="timeline-card reveal">
+        <div class="timeline-head">
+          <div>
+            <div class="timeline-role">Jovem Aprendiz</div>
+            <div class="timeline-company">Toscana</div>
+          </div>
+          <span class="timeline-date">2023</span>
+        </div>
+        <ul>
+          <li>Suporte administrativo e atendimento a usuários internos</li>
+          <li>Organização de documentos e apoio a processos operacionais</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FORMAÇÃO ================= -->
+<section class="formacao" id="formacao">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow"></span>
+      <h2>Formação acadêmica</h2>
+    </div>
+    <div class="edu-list">
+      <div class="edu-item reveal">
+        <div>
+          <div class="edu-course">Sistemas de Informação</div>
+          <div class="edu-school">IFSP</div>
+        </div>
+        <span class="edu-date">2026 – 2029</span>
+      </div>
+      <div class="edu-item reveal">
+        <div>
+          <div class="edu-course">Engenharia de Controle e Automação</div>
+          <div class="edu-school">IFSP</div>
+        </div>
+        <span class="edu-date">2021 – 2026</span>
+      </div>
+      <div class="edu-item reveal">
+        <div>
+          <div class="edu-course">Tecnologia em Design Gráfico e Digital</div>
+          <div class="edu-school">FAM</div>
+        </div>
+        <span class="edu-date">2023 – 2025</span>
+      </div>
+      <div class="edu-item reveal">
+        <div>
+          <div class="edu-course">Técnico em Desenvolvimento de Sistemas</div>
+          <div class="edu-school">ETEC Vila Formosa</div>
+        </div>
+        <span class="edu-date">2019 – 2020</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS + EXTRA ================= -->
+<section class="skills" id="habilidades">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Competências</h2>
+    </div>
+    <div class="skill-groups">
+      <div class="skill-card reveal">
+        <h3>💻 Linguagens</h3>
+        <div class="pill-row">
+          <span class="pill">Python</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">Java</span>
+          <span class="pill">HTML</span>
+          <span class="pill">CSS</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>🌐 Front-end &amp; Versionamento</h3>
+        <div class="pill-row">
+          <span class="pill alt1">React (básico)</span>
+          <span class="pill alt1">Git</span>
+          <span class="pill alt1">GitHub</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>🗄️ Dados &amp; Integração</h3>
+        <div class="pill-row">
+          <span class="pill alt2">SQL</span>
+          <span class="pill alt2">SQL Server</span>
+          <span class="pill alt2">MySQL</span>
+          <span class="pill alt2">APIs REST/SOAP</span>
+          <span class="pill alt2">Integração de Sistemas</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>⚙️ Engenharia de Software</h3>
+        <div class="pill-row">
+          <span class="pill">Testes Funcionais</span>
+          <span class="pill">Levantamento de Requisitos</span>
+          <span class="pill">Documentação Técnica</span>
+          <span class="pill">Metodologias Ágeis</span>
+        </div>
+      </div>
+      <div class="skill-card reveal" style="grid-column:1 / -1;">
+        <h3>🧩 Outras Tecnologias</h3>
+        <div class="pill-row">
+          <span class="pill alt1">OutSystems</span>
+          <span class="pill alt1">PCS 7</span>
+          <span class="pill alt1">TIA Portal</span>
+          <span class="pill alt1">Figma</span>
+          <span class="pill alt1">Automação</span>
+        </div>
+      </div>
+    </div>
+    <div class="extra-groups">
+      <div class="skill-card reveal">
+        <h3>🌍 Idiomas</h3>
+        <div class="lang-item"><span>Inglês</span><span>Avançado</span></div>
+        <div class="lang-item"><span>Espanhol</span><span>Básico</span></div>
+        <div class="lang-item"><span>Francês</span><span>Básico</span></div>
+      </div>
+      <div class="skill-card reveal">
+        <h3>💛 Atividades voluntárias</h3>
+        <div class="vol-item">
+          <span class="vol-role">Social Media Designer</span>
+          <span class="vol-org">Projeto Amigo Não se Compra</span>
+        </div>
+        <div class="vol-item">
+          <span class="vol-role">Conteúdo Gráfico</span>
+          <span class="vol-org">Instituto de Educação e Cidadania</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJETOS ================= -->
+<section class="projects" id="projetos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Projetos</h2>
+      <p>Uma seleção de trabalhos de design, ilustração e projetos acadêmicos.</p>
+    </div>
+
+    <h3 class="project-sub reveal">Design &amp; Comunicação Visual</h3>
+    <div class="project-grid">
+      <div class="project-card reveal">
+        <div class="washi" style="background:var(--pink);"></div>
+        <img class="project-thumb" src="https://mall.industry.siemens.com/mall/collaterals/files/202/JPG/00/31/S_ST80_XX_00246j.JPG" alt="UI/UX Design" loading="lazy">
+        <span class="project-tag">UI/UX &amp; Usabilidade</span>
+        <h4>Interfaces de Supervisórios e IHM</h4>
+        <p>Otimização de telas industriais com foco na experiência do operador, reduzindo a carga cognitiva com conceitos modernos de design funcional em TIA Portal.</p>
+      </div>
+      <div class="project-card reveal">
+        <div class="washi" style="background:var(--lilac);"></div>
+        <img class="project-thumb" src="https://storage.googleapis.com/atados-v3/user-uploaded/images-large/c66a7237-7f65-4e63-ac31-1fcd7f439bef.apng" alt="Social Media Design" loading="lazy">
+        <span class="project-tag">Social Media &amp; Branding</span>
+        <h4>Amigo Não se Compra</h4>
+        <p>A maior plataforma online de adoção de animais do Brasil.</p>
+        <a href="https://www.amigonaosecompra.com.br/" target="_blank" class="project-link">Ver projeto →</a>
+      </div>
+      <div class="project-card reveal">
+        <div class="washi" style="background:var(--mint);"></div>
+        <img class="project-thumb" src="https://www.iecbrasil.org.br/assets/iec-42378397.png" alt="Design Gráfico Institucional" loading="lazy">
+        <span class="project-tag">Design Gráfico</span>
+        <h4>Instituto de Educação e Cidadania</h4>
+        <p>Layouts e peças de comunicação visual para campanhas de conscientização, transformando dados complexos em infográficos educativos.</p>
+      </div>
+    </div>
+
+    <h3 class="project-sub reveal">Ilustração &amp; Arte Digital</h3>
+    <div class="art-gallery-single reveal">
+      <button class="art-gallery-card" id="artGalleryOpen" type="button" aria-label="Abrir galeria de Ilustração e Arte Digital">
+        <img class="art-gallery-cover" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201200%20650%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FFE1EB%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220.55%22%20stop-color%3D%22%23EDE5FF%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23E1FBEE%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22heart%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%22%20stop-color%3D%22%23FF9AB5%22%2F%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23FF6F91%22%2F%3E%0A%20%20%20%20%3C%2FlinearGradient%3E%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Crect%20width%3D%221200%22%20height%3D%22650%22%20rx%3D%2238%22%20fill%3D%22url%28%23bg%29%22%2F%3E%0A%20%20%3Cg%20opacity%3D%22.96%22%3E%0A%20%20%20%20%3Crect%20x%3D%2255%22%20y%3D%2255%22%20width%3D%22520%22%20height%3D%22240%22%20rx%3D%2226%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%20%20%3Crect%20x%3D%22625%22%20y%3D%2255%22%20width%3D%22520%22%20height%3D%22240%22%20rx%3D%2226%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%20%20%3Crect%20x%3D%2255%22%20y%3D%22345%22%20width%3D%22520%22%20height%3D%22240%22%20rx%3D%2226%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%20%20%3Crect%20x%3D%22625%22%20y%3D%22345%22%20width%3D%22520%22%20height%3D%22240%22%20rx%3D%2226%22%20fill%3D%22%23fff%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%20%20%3Cg%20fill%3D%22none%22%20stroke%3D%22%23FFB3C9%22%20stroke-width%3D%2214%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.8%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M110%20235%20C190%20115%20330%20115%20515%20235%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M685%20235%20C770%20105%20930%20115%201090%20235%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M110%20525%20C220%20390%20370%20410%20515%20525%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M685%20525%20C790%20400%20945%20390%201090%20525%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%20%20%3Cg%20fill%3D%22%23D9CBFF%22%20opacity%3D%22.8%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22185%22%20cy%3D%22140%22%20r%3D%2238%22%2F%3E%3Ccircle%20cx%3D%221015%22%20cy%3D%22145%22%20r%3D%2248%22%2F%3E%0A%20%20%20%20%3Ccircle%20cx%3D%22250%22%20cy%3D%22455%22%20r%3D%2245%22%2F%3E%3Ccircle%20cx%3D%22930%22%20cy%3D%22470%22%20r%3D%2234%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%20%20%3Cpath%20d%3D%22M600%20388c-13%200-24-5-34-15l-77-74c-28-27-32-70-9-99%2021-26%2059-31%2086-12l34%2024%2034-24c27-19%2065-14%2086%2012%2023%2029%2019%2072-9%2099l-77%2074c-10%2010-21%2015-34%2015Z%22%20fill%3D%22url%28%23heart%29%22%20stroke%3D%22%23fff%22%20stroke-width%3D%229%22%2F%3E%0A%20%20%3Cg%20fill%3D%22%234A3B45%22%20font-family%3D%22Arial%2C%20sans-serif%22%20text-anchor%3D%22middle%22%3E%0A%20%20%20%20%3Ctext%20x%3D%22600%22%20y%3D%22455%22%20font-size%3D%2234%22%20font-weight%3D%22700%22%3EGaleria%20de%20Ilustra%C3%A7%C3%A3o%3C%2Ftext%3E%0A%20%20%20%20%3Ctext%20x%3D%22600%22%20y%3D%22500%22%20font-size%3D%2223%22%20opacity%3D%22.66%22%3Eclique%20para%20visualizar%20os%20trabalhos%3C%2Ftext%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E" alt="Capa da galeria de Ilustração e Arte Digital">
+        <span class="art-gallery-overlay" aria-hidden="true">
+          <span class="art-gallery-kicker">Galeria de artes</span>
+          <strong>Ilustração &amp; Arte Digital</strong>
+          <span class="art-gallery-hint">4 trabalhos • clique para visualizar</span>
+        </span>
+      </button>
+    </div>
+
+    <h3 class="project-sub reveal">Projetos Acadêmicos</h3>
+    <div class="project-grid">
+      <div class="project-card reveal">
+        <div class="washi" style="background:var(--lilac);"></div>
+        <img class="project-thumb" src="gallery/print site tcc.png" alt="TCC Descomplicada(mente)" loading="lazy">
+        <span class="project-tag">TCC / Web Development</span>
+        <h4>Descomplicada(mente)</h4>
+        <p><strong>Descomplicada(mente)</strong> é uma plataforma web desenvolvida como Trabalho de Conclusão de Curso com foco em apoiar a Sociedade Amigos da Vida (SAVI) na divulgação de seu trabalho voluntário e gratuito voltado ao acolhimento de pessoas em situações de crise emocional.</p>
+        <p>A proposta foi criar um ambiente digital acessível, organizado e acolhedor para apresentar informações sobre a instituição, seus serviços e conteúdos de conscientização sobre saúde mental de forma clara e fácil de navegar.</p>
+        <p>Durante o desenvolvimento, trabalhei na estruturação das páginas, organização visual e implementação do front-end utilizando HTML e CSS, considerando princípios de UX/UI, hierarquia da informação, legibilidade e experiência do usuário.</p>
+        <p>O projeto uniu desenvolvimento web, design e impacto social, contribuindo para o aprimoramento de habilidades como planejamento de interfaces, levantamento de necessidades, organização de conteúdo, testes de navegação e documentação do desenvolvimento.</p>
+        <a href="https://github.com/langdonzx/HTML--CSS/tree/main/site-tcc" target="_blank" class="project-link">Ver repositório →</a>
+      </div>
+      <div class="project-card reveal">
+        <div class="washi" style="background:var(--mint);"></div>
+        <img class="project-thumb" src="gallery/Trabalho Teoria do Design.png" alt="Desafio Art Déco Vitral" loading="lazy">
+        <span class="project-tag">Design de Produto</span>
+        <h4>Lustre Conceitual Art Déco</h4>
+        <p>Projeto conceitual de uma luminária inspirada na estética Art Déco, combinando formas geométricas, materiais sofisticados e elementos decorativos característicos do movimento.</p>
+        <p>A base em metal cromado foi pensada para oferecer estabilidade e reforçar a sensação de elegância. A estrutura vertical apresenta uma curva suave que sustenta o difusor e complementa a composição visual da peça.</p>
+        <p>O difusor em vidro utiliza padrões geométricos inspirados no Art Déco para distribuir a luz de maneira uniforme e criar uma atmosfera aconchegante. Detalhes em relevo na base e no suporte completam o conceito, reforçando o caráter refinado do produto.</p>
+      </div>
+      <div class="project-card reveal">
+        <div class="washi" style="background:var(--pink);"></div>
+        <img class="project-thumb" src="gallery/LongLegs cartza refeito.png" alt="Cartaz de Terror Longlegs" loading="lazy">
+        <span class="project-tag">Tipografia 3D</span>
+        <h4>Cartaz Conceitual: Longlegs (2024)</h4>
+        <p>Cartaz conceitual inspirado em <em>Longlegs: Vínculo Mortal</em> (2024), desenvolvido para transmitir uma atmosfera sombria, inquietante e carregada de suspense.</p>
+        <p>A composição utiliza predominantemente vermelho e preto para reforçar sensações de perigo, medo e mistério. O rosto parcialmente oculto e as texturas difusas criam uma presença ameaçadora, enquanto o título em destaque funciona como ponto de impacto visual.</p>
+        <p>O trabalho explora contraste, tipografia e tratamento de imagem para construir uma identidade visual perturbadora e despertar curiosidade no espectador, antecipando o clima de tensão presente na narrativa do filme.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galeria de projetos" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Fechar galeria">✕</button>
+  <button class="lightbox-prev" id="lightboxPrev" type="button" aria-label="Imagem anterior">‹</button>
+  <div class="lightbox-dialog">
+    <img class="lightbox-image" id="lightboxImage" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+  </div>
+  <button class="lightbox-next" id="lightboxNext" type="button" aria-label="Próxima imagem">›</button>
+</div>
+
+<script>
+  const burger = document.getElementById('burgerBtn');
+  const closeBtn = document.getElementById('closeMenuBtn');
+  const menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => menu.classList.add('open'));
+  closeBtn.addEventListener('click', () => menu.classList.remove('open'));
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => io.observe(el));
+
+  // Galeria das imagens dos projetos
+  const projectGalleryImages = Array.from(document.querySelectorAll('.project-thumb'));
+  const artGalleryOpen = document.getElementById('artGalleryOpen');
+  const artGalleryItems = [
+    { src:'gallery/laracroft.jpg', alt:'Lara Croft — Arte Digital' },
+    { src:'gallery/Thewitcher4.jpg', alt:'Geralt of Rivia — Retrato Conceitual' },
+    { src:'gallery/katniss_everdeen.png', alt:'Pop Character Design — Comic / Lineart' },
+    { src:'gallery/dc.webp', alt:'Dark Ink Illustration — Sketch & Ink' }
+  ];
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+
+  let currentGallery = [];
+  let currentImageIndex = 0;
+  let lastFocusedImage = null;
+
+  const projectGalleryItems = projectGalleryImages.map(img => ({
+    src: img.currentSrc || img.src,
+    alt: img.alt || 'Imagem do projeto',
+    trigger: img
+  }));
+
+  projectGalleryImages.forEach((img, index) => {
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('role', 'button');
+    img.setAttribute('aria-label', `${img.alt || 'Imagem do projeto'} — abrir na galeria`);
+
+    const openFromImage = () => {
+      currentGallery = projectGalleryItems;
+      currentImageIndex = index;
+      lastFocusedImage = img;
+      openLightbox();
+    };
+
+    img.addEventListener('click', openFromImage);
+    img.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openFromImage();
+      }
+    });
+  });
+
+  if (artGalleryOpen) {
+    artGalleryOpen.addEventListener('click', () => {
+      currentGallery = artGalleryItems;
+      currentImageIndex = 0;
+      lastFocusedImage = artGalleryOpen;
+      openLightbox();
+    });
+  }
+
+  function updateLightbox() {
+    const item = currentGallery[currentImageIndex];
+    if (!item) return;
+    lightboxImage.src = item.src;
+    lightboxImage.alt = item.alt || 'Imagem ampliada do projeto';
+    lightboxCaption.textContent = item.alt || `Projeto ${currentImageIndex + 1}`;
+  }
+
+  function openLightbox() {
+    updateLightbox();
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('gallery-open');
+    lightboxClose.focus();
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('gallery-open');
+    if (lastFocusedImage) lastFocusedImage.focus();
+  }
+
+  function showPreviousImage() {
+    if (!currentGallery.length) return;
+    currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
+    updateLightbox();
+  }
+
+  function showNextImage() {
+    if (!currentGallery.length) return;
+    currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
+    updateLightbox();
+  }
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', showPreviousImage);
+  lightboxNext.addEventListener('click', showNextImage);
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (event.key === 'Escape') closeLightbox();
+    if (event.key === 'ArrowLeft') showPreviousImage();
+    if (event.key === 'ArrowRight') showNextImage();
+  });
+</script>
+
+</body>
+</html>
